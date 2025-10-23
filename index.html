@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minhas Referências</title>
+    <title>Referências</title>
+    
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -17,11 +18,46 @@
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
-        h1 {
-            color: #0056b3;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
+        
+        /* Estilo da barra de abas */
+        .tab-links {
+            overflow: hidden;
+            border-bottom: 2px solid #ccc;
+            margin-bottom: 20px;
         }
+
+        /* Estilo dos botões das abas */
+        .tab-links button {
+            background-color: #f1f1f1;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            font-size: 17px;
+            border-radius: 8px 8px 0 0;
+            margin-right: 5px;
+            transition: 0.3s;
+        }
+
+        /* Mudar cor ao passar o mouse */
+        .tab-links button:hover {
+            background-color: #ddd;
+        }
+
+        /* Estilo da aba ativa */
+        .tab-links button.active {
+            background-color: #0056b3;
+            color: white;
+        }
+
+        /* Estilo do conteúdo da aba */
+        .tab-content {
+            display: none; /* Escondido por padrão */
+            padding: 0px 12px;
+        }
+        
+        /* Estilo da lista de referências */
         ul {
             list-style-type: none;
             padding-left: 0;
@@ -49,25 +85,83 @@
 
     <h1>Minhas Referências Bibliográficas</h1>
 
-    <ul>
-        <li>
-            <strong>Autor(es) (Ano).</strong> <em>Título do livro em itálico.</em> Local de Publicação: Editora.
-            <br>
-            <a href="https://link-para-o-artigo-ou-livro.com" target="_blank">[Acessar Online]</a>
-        </li>
-        
-        <li>
-            <strong>Sobrenome, N. (2023).</strong> Título do artigo: subtítulo. 
-            <em>Nome da Revista</em>, 10(2), 123-145.
-            <br>
-            DOI: <a href="https://doi.org/xxxx/xxxx" target="_blank">https://doi.org/xxxx/xxxx</a>
-        </li>
+    <div class="tab-links">
+        <button class="tablink" onclick="openTab(event, 'Trabalho')" id="defaultOpen">Trabalho Completo</button>
+        <button class="tablink" onclick="openTab(event, 'Poster')">Pôster</button>
+    </div>
 
-        <li>
-            <strong>Exemplo, J. D. (2022).</strong> <em>Um Guia Completo sobre Python.</em> São Paulo: Editora Fictícia.
-        </li>
-
+    <div id="Trabalho" class="tab-content">
+        <h3>Referências do Trabalho Completo</h3>
+        <ul>
+            [cite_start]<li><strong>BRAITENBERG, C. (2015).</strong> <a href="https://www.google.com/search?q=Exploration+of+tectonic+structures+with+GOCE+in+Africa+and+across-continents" target="_blank">Exploration of tectonic structures with GOCE in Africa and across-continents.</a> <em>International Journal of Applied Earth Observation and Geoinformation</em>, 35, 88-95. [cite: 2, 3]</li>
+            <li><strong>CARPENEDO, Camila Bertoletti.</strong> <a href="https://www.google.com/search?q=Bloqueios+atmosféricos+associados+à+variabilidade+extrema+do+gelo+marinho+antártico+e+impactos+na+América+do+Sul" target="_blank">Bloqueios atmosféricos associados à variabilidade extrema do gelo marinho antártico e impactos na América do Sul.</a> São Paulo, SP: Instituto de Astronomia, Geofísica e Ciências Atmosféricas. [cite_start]Originalmente apresentada como tese de doutorado, Universidade de São Paulo, 2017. [cite: 4, 5, 6]</li>
+            <li><strong>COUGHLAN, M. J.</strong> <a href="https://www.google.com/search?q=A+comparative+climatology+of+blocking+action+in+the+two+hemispheres" target="_blank">A comparative climatology of blocking action in the two hemispheres.</a> <em>Aust.-Meteor. Mag.</em>, v. 31, p. [cite_start]3-13, 1983. [cite: 7]</li>
+            <li><strong>FRETWELL, P., et al. (2013)[cite_start].</strong> <a href="https://www.google.com/search?q=Bedmap2:+improved+ice+bed,+surface+and+thickness+datasets+for+Antarctica" target="_blank">Bedmap2: improved ice bed, surface and thickness datasets for Antarctica.</a> <em>The cryosphere</em>, 7(1), 375-393. [cite: 8, 9]</li>
+            <li><strong>HIRT, C., et al. (2012)[cite_start].</strong> <a href="https://www.google.com/search?q=Topographic/isostatic+evaluation+of+new-generation+GOCE+gravity+field+models" target="_blank">Topographic/isostatic evaluation of new-generation GOCE gravity field models.</a> <em>Journal of Geophysical Research: Solid Earth</em>, 117(B5). [cite: 10, 11]</li>
+            <li><strong>HOSKING, J. S., et al. (2013)[cite_start].</strong> <a href="https://www.google.com/search?q=The+influence+of+the+Amundsen-Bellingshausen+Sea+low+on+the+climate+of+West+Antarctica" target="_blank">The influence of the Amundsen-Bellingshausen Sea low on the climate of West Antarctica and its representation in coupled climate model simulations.</a> <em>Journal of Climate</em>, 26(17), 6633-6648. [cite: 12, 13, 14]</li>
+            <li><strong>IVINS, Erik R. et al. (2013).</strong> <a href="https://www.google.com/search?q=Antarctic+contribution+to+sea+level+rise+observed+by+GRACE+with+improved+GIA+correction" target="_blank">Antarctic contribution to sea level rise observed by GRACE with improved GIA correction.</a> <em>Journal of Geophysical Research: Solid Earth</em>, v. 118, n. 6, p. [cite_start]3126-3141. [cite: 15, 16]</li>
+            <li><strong>JUSTINO, F.B.; PELTIER, R. (2008).</strong> <a href="https://www.google.com/search?q=Climate+anomalies+induced+by+the+Arctic+and+Antarctics+Oscillations" target="_blank">Climate anomalies induced by the Arctic and Antarctics Oscillations: Glacial Maximum and presente-day perspectives.</a> <em>Journal of Climate</em>, v. 21, n. 3, p. [cite_start]459-475. [cite: 17, 18]</li>
+            <li><strong>KIDSTON, J. et al. (2011).</strong> <a href="https://www.google.com/search?q=The+influence+of+Southern+Hemisphere+sea-ice+extent+on+the+latitude+of+the+mid-latitude+jet+stream" target="_blank">The influence of Southern Hemisphere sea-ice extent on the latitude of the mid-latitude jet stream.</a> <em>Geophys. Res. [cite_start]Lett.</em>, v.38. [cite: 19, 20]</li>
+            <li><strong>KIKUCHI, Yukio. (1969).</strong> <a href="https://www.google.com/search?q=Numerical+simulation+of+the+blocking+process" target="_blank">Numerical simulation of the blocking process.</a> <em>Journal of the Meteorological Society of Japan. Ser. II</em>, v. 47, n. 1, p. [cite_start]29-54. [cite: 21, 23]</li>
+            <li><strong>KING, Matt A. et al. (2012).</strong> <a href="https://www.google.com/search?q=Lower+satellite-gravimetry+estimates+of+Antarctic+sea-level+contribution" target="_blank">Lower satellite-gravimetry estimates of Antarctic sea-level contribution.</a> <em>Nature</em>, v. 491, n. 7425, p. [cite_start]586-589. [cite: 24]</li>
+            <li><strong>KVAS, A., et al. (2020)[cite_start].</strong> <a href="https://www.google.com/search?q=GOCO06s-a+satellite-only+global+gravity+field+model" target="_blank">GOCO06s-a satellite-only global gravity field model.</a> <em>Earth System Science Data Discussions</em>, 2020, 1-31. [cite: 25, 26]</li>
+            <li><strong>LEFEBVRE, Wouter et al. (2004).</strong> <a href="https://www.google.com/search?q=Influence+of+the+Southern+Annular+Mode+on+the+sea+ice-ocean+system" target="_blank">Influence of the Southern Annular Mode on the sea ice-ocean system.</a> <em>Journal of Geophysical Research: Oceans</em>, v. 109, n. [cite_start]C9. [cite: 27, 28]</li>
+            <li><strong>LINDEMANN (2015), Douglas da Silva; JUSTINO, Flávio Barbosa.</strong> <a href="https://www.google.com/search?q=A+influência+dos+modos+de+variabilidade+climática+na+temperatura+em+superficie+na+Antártica" target="_blank">A influência dos modos de variabilidade climática na temperatura em superficie na Antártica.</a> <em>Revista Brasileira de Meteorologia</em>, v. 30, p. [cite_start]214-222. [cite: 29, 30]</li>
+            <li><strong>MARENGO, JosÉ A. et al. (2024).</strong> <a href="https://www.google.com/search?q=O+maior+desastre+climático+do+Brasil:+chuvas+e+inundações+no+estado+do+Rio+Grande+do+Sul+em+abril-maio+2024" target="_blank">O maior desastre climático do Brasil: chuvas e inundações no estado do Rio Grande do Sul em abril-maio 2024.</a> <em>Estudos Avançados</em>, v. 38, n. 112, p. [cite_start]203-228. [cite: 31, 32]</li>
+            [cite_start]<li><strong>MARSHALL, G. J. (2003).</strong> <a href="https://www.google.com/search?q=Trends+in+the+Southern+Annular+Mode+from+observations+and+reanalyses" target="_blank">Trends in the Southern Annular Mode from observations and reanalyses.</a> <em>Journal of Climate</em>, 16(24), 4134-4143. [cite: 33, 34]</li>
+            <li><strong>MONTEIRO, Joy Merwin. (2024).</strong> <a href="https://www.google.com/search?q=The+year+2023+may+afford+us+a+peek+at+a+warmer+world" target="_blank">The year 2023 may afford us a peek at a warmer world.</a> <em>Communications Earth & Environment</em>, v. 5, n. 1, p. [cite_start]280. [cite: 35, 36]</li>
+            <li><strong>MORLIGHEM, M., et al. (2020)[cite_start].</strong> <a href="https://www.google.com/search?q=Deep+glacial+troughs+and+stabilizing+ridges+unveiled+beneath+the+margins+of+the+Antarctic+ice+sheet" target="_blank">Deep glacial troughs and stabilizing ridges unveiled beneath the margins of the Antarctic ice sheet.</a> <em>Nature geoscience</em>, 13(2), 132-137. [cite: 37, 38]</li>
+            <li><strong>PARISE, C.K. et al. (2015).</strong> <a href="https://www.google.com/search?q=The+Influence+of+Sea+Ice+Dynamics+on+the+Climate+Sensitivity+and+Memory+to+Increased+Antarctic+Sea+Ice" target="_blank">The Influence of Sea Ice Dynamics on the Climate Sensitivity and Memory to Increased Antarctic Sea Ice.</a> <em>J. [cite_start]Climate</em>, v.28, p.9642-9668. [cite: 40, 41]</li>
+            [cite_start]<li><strong>PIVETTA, T., & Braitenberg, C. (2020).</strong> <a href="https://www.google.com/search?q=Sensitivity+of+gravity+and+topography+regressions+to+earth+and+planetary+structures" target="_blank">Sensitivity of gravity and topography regressions to earth and planetary structures.</a> <em>Tectonophysics</em>, 774, 228299. [cite: 42, 43]</li>
+            [cite_start]<li><strong>RAHMSTORF, S. (2017).</strong> <a href="https://www.google.com/search?q=Rising+hazard+of+storm-surge+flooding" target="_blank">Rising hazard of storm-surge flooding.</a> <em>Proceedings of the National Academy of Sciences</em>, 114(45), 11806-11808. [cite: 44]</li>
+            <li><strong>RAPHAEL, M.N.; HOBBS, W.; WAINER, I. (2010).</strong> <a href="https://www.google.com/search?q=The+effect+of+Antarctic+sea+ice+on+the+Southern+Hemisphere+atmosphere+during+the+southern+summer" target="_blank">The effect of Antarctic sea ice on the Southern Hemisphere atmosphere during the southern summer.</a> <em>Clim. [cite_start]Dynam.</em>, v.36, p.1403-1417. [cite: 45, 47]</li>
+            <li><strong>RINTOUL, S. R., et al. (2018)[cite_start].</strong> <a href="https://www.google.com/search?q=Deep+ocean+circulation+in+the+Australian-Antarctic+Basin" target="_blank">Deep ocean circulation in the Australian-Antarctic Basin: Southern Ocean.</a> <em>Nature Climate Change</em>, 8(10), 877-884. [cite: 48, 49]</li>
+            <li><strong>SCHEINERT, M., et al. (2015)[cite_start].</strong> <a href="https://www.google.com/search?q=Gravity+field+determination+by+terrestrial+and+airborne+surveys+over+Antarctica" target="_blank">Gravity field determination by terrestrial and airborne surveys over Antarctica: Contribution to the Antarctic Gravity Field.</a> <em>Journal of Geodesy</em>, 89(4), 377-399. [cite: 50, 51]</li>
+            <li><strong>SHEPHERD, A., et al. (2018)[cite_start].</strong> <a href="https://www.google.com/search?q=Mass+balance+of+the+Antarctic+Ice+Sheet+from+1992+to+2017" target="_blank">Mass balance of the Antarctic Ice Sheet from 1992 to 2017.</a> <em>Nature</em>, 558(7709), 219-222. [cite: 52, 53]</li>
+            <li><strong>STAMMERJOHN, Sharon E. et al. (2008).</strong> <a href="https://www.google.com/search?q=Trends+in+Antarctic+annual+sea+ice+retreat+and+advance" target="_blank">Trends in Antarctic annual sea ice retreat and advance and their relation to El Niño-Southern Oscillation and Southern Annular Mode variability.</a> <em>Journal of Geophysical Research: Oceans</em>, v. 113, n. [cite_start]C3. [cite: 54, 55]</li>
+            <li><strong>TAPLEY, B. D., et al. (2019)[cite_start].</strong> <a href="https://www.google.com/search?q=Contributions+of+GRACE+to+understanding+climate+change" target="_blank">Contributions of GRACE to understanding climate change.</a> <em>Nature Climate Change</em>, 9(5), 358-369. [cite: 56, 57]</li>
+            <li><strong>THOMPSON, David WJ; WALLACE, John M. (2000).</strong> <a href="https://www.google.com/search?q=Annular+modes+in+the+extratropical+circulation.+Part+I:+Month-to-month+variability" target="_blank">Annular modes in the extratropical circulation. Part I: Month-to-month variability.</a> <em>Journal of climate</em>, v. 13, n. 5, p. [cite_start]1000-1016. [cite: 58, 59]</li>
+            <li><strong>TURNER, John. (2004).</strong> <a href="https://www.google.com/search?q=The+el+nino-southern+oscillation+and+antarctica" target="_blank">The el nino-southern oscillation and antarctica.</a> <em>International Journal of Climatology</em>, v. 24, n. 1, p. [cite_start]1-31. [cite: 60, 61]</li>
+            <li><strong>TURNER, John et al. (2009)[cite_start].</strong> <a href="https://www.google.com/search?q=Antarctic+climate+change+and+the+environment" target="_blank">Antarctic climate change and the environment.</a> [cite: 62]</li>
+            <li><strong>VELICOGNA, I., et al. (2020)[cite_start].</strong> <a href="https://www.google.com/search?q=Continuity+of+ice+sheet+mass+loss+in+Greenland+and+Antarctica+from+the+GRACE+and+GRACE+Follow-On+missions" target="_blank">Continuity of ice sheet mass loss in Greenland and Antarctica from the GRACE and GRACE Follow-On missions.</a> <em>Geophysical Research Letters</em>, 47(8), e2020GL087291. [cite: 63, 64, 65]</li>
+            <li><strong>YUAN, X.; MARTINSON, D.G.; LIU, W.T. (1998).</strong> <a href="https://www.google.com/search?q=The+effect+of+air-sea-ice+interaction+onwinter+1996+Southern+Ocean+subpolar+storm+distribution" target="_blank">The effect of air-sea-ice interaction onwinter 1996 Southern Ocean subpolar storm distribution.</a> <em>J. Geophys. Res. [cite_start]Atmosphere</em>, v.104, p.1991-2007. [cite: 66, 67, 69]</li>
+            <li><strong>ZOGAHIB, André Luiz Nunes et al. (2024).</strong> <a href="https://www.google.com/search?q=Mudanças+climáticas+e+seus+impactos+nas+cidades:+estudo+de+caso+do+fenômeno+da+seca+no+Estado+do+Amazonas" target="_blank">Mudanças climáticas e seus impactos nas cidades: estudo de caso do fenômeno da seca no Estado do Amazonas, Brasil.</a> <em>Research, Society and Development</em>, v. 13, n. [cite_start]9, p. e9913946940-e9913946940. [cite: 70, 71]</li>
         </ul>
+    </div>
+
+    <div id="Poster" class="tab-content">
+        <h3>Referências do Pôster</h3>
+        <p>As referências específicas do pôster serão adicionadas em breve.</p>
+        
+        <ul>
+            </ul>
+    </div>
+
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            
+            // Pega todos os elementos com class="tab-content" e esconde eles
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            // Pega todos os elementos com class="tablink" e remove a classe "active"
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            // Mostra a aba atual, e adiciona a classe "active" no botão
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Simula um clique na aba "defaultOpen" (Trabalho) para ela já começar aberta
+        document.getElementById("defaultOpen").click();
+    </script>
 
 </body>
 </html>
